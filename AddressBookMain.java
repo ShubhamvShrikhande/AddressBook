@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class AddressBookMain {
 	public static void main(String[] args) {
-		System.out.println("Welcome to Address Book program");
 		AddressBook addressBook = new AddressBook();
 		Scanner sc = new Scanner(System.in);
 		while (true) {
@@ -12,7 +11,8 @@ public class AddressBookMain {
 			System.out.println("1) Press 1 to add new contact");
 			System.out.println("2) press 2 to display contact");
 			System.out.println("3) press 3 to Edit contact");
-			System.out.println("4) press 4 to Exit");
+			System.out.println("4) press 4 to delete contact");
+			System.out.println("5) press 5 to Exit");
 			int input = sc.nextInt();
 			switch (input) {
 			case 1: {
@@ -22,13 +22,16 @@ public class AddressBookMain {
 				addressBook.display();
 			}
 			case 3: {
-				addressBook.editDetails(input);
+				addressBook.editDetails();
 			}
 			case 4: {
-				System.out.println("Thank you so much !!!");
-				System.exit(0);
+				addressBook.delete();
 			}
+			case 5: {
+				System.out.println("Thank you so much");
+				System.exit(0);
 
+			}
 			}
 		}
 	}
